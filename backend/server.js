@@ -1,7 +1,9 @@
 const express = require("express");
 const fs = require("fs");
+const cors = require("cors");
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 const TASK_FILE = "./tasks.json";
 
@@ -18,3 +20,4 @@ app.post("/api/tasks", (req, res) => {
 });
 
 app.listen(3000, () => console.log("API running on port 3000"));
+
